@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('back.gif');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header{
+         position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 25px 13%;
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        }
+.navbar a{
+    position: relative;
+    font-size: 16px;
+    color: #fff;
+    margin-right: 30px;
+    text-decoration: none;
+}
+.navbar a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    bottom: -5px;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s ease;
+}
+.navbar a:hover:after{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+        .form-group {
+            background: floralwhite;
+            opacity: 0.7;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1em;
+            font-weight: 1000;
+            color: black;
+        }
+
+        input, select, textarea {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #888;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .submit-button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: transparent;
+            color: blue;
+            border: black solid 4px;
+            padding: 12px 20px;
+            margin: 20px;
+            font-size: 20px;
+            font-weight: 1000;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: #003f7f;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 15px;
+            }
+            button {
+                width: 100%;
+            }
+        }
+
+        @keyframes floating-background {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 100px 100px;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        body {
+            animation: floating-background 10s infinite linear;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+             <nav class="navbar">
+                <a href="Index.html">Home</a>
+                 <a href="#">EDC</a>
+                <a href="#">Questions</a>
+                <a href="#">Results</a>
+            </nav>
+        </header>
+        <form action="/submit" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="roll_number">Roll Number:</label>
+                <input type="text" id="roll_number" name="roll_number" placeholder="Enter your roll number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <input type="text" id="department" name="department" placeholder="Enter your department" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone_number">Phone Number:</label>
+                <input type="tel" id="phone_number" name="phone_number" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="year_of_study">Year of Study:</label>
+                <select id="year_of_study" name="year_of_study" required>
+                    <option value="">Select</option>
+                    <option value="1">1st Year</option>
+                    <option value="2">2nd Year</option>
+                    <option value="3">3rd Year</option>
+                    <option value="4">4th Year</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="registration_number">Registration Number:</label>
+                <input type="text" id="registration_number" name="registration_number" placeholder="Enter your registration number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="place_of_residence">Place of Residence:</label>
+                <input type="text" id="place_of_residence" name="place_of_residence" placeholder="Enter your place of residence" required>
+            </div>
+
+            <div class="form-group">
+                <label for="domain">Domain:</label>
+                <input type="text" id="domain" name="domain" placeholder="Enter your domain" required>
+            </div>
+
+            <div class="form-group">
+                <label for="strengths">What are your strengths?</label>
+                <textarea id="strengths" name="strengths" rows="3" placeholder="Describe your strengths" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="weaknesses">What are your weaknesses?</label>
+                <textarea id="weaknesses" name="weaknesses" rows="3" placeholder="Describe your weaknesses" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">Why do you want to join the EDC club?</label>
+                <textarea id="reason" name="reason" rows="3" placeholder="Explain why you want to join" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="skills">What type of skills do you possess?</label>
+                <textarea id="skills" name="skills" rows="3" placeholder="List your skills" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="success">How do you define success for yourself?</label>
+                <textarea id="success" name="success" rows="3" placeholder="Define success for yourself" required></textarea>
+            </div>
+        </form>
+    </div>
+    <div class="submit-button-container">
+        <button type="submit">Submit</button>
+    </div>
+</body>
+</html>
